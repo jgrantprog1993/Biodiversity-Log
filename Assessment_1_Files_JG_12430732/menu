@@ -1,0 +1,51 @@
+#!/bin/bash
+# Name: Jason Grant
+# Student ID: 12430732
+# 
+#
+#
+
+echo -n -e "\e[1;33m
+1) Add a new Recoding 
+2) Remove an existing Recording
+3) Search for Species Data
+4) E-mail Recorder(s)
+5) Quit 
+\e[0m"
+
+read option
+case $option in
+
+        [1] )
+                echo -e "\e[1;32m Adding a new Recorxding \e[0m"
+                ./addRecord.sh
+                ;;
+
+        [2])
+                echo -e "\e[1;32m Remove an existing Recording \e[0m"
+                ./remove.sh
+                ;;
+       
+        [3])
+		
+				./searchSpecies.sh
+				;;
+		
+		[4])
+				echo -e "\e[1;32m E-mail records \e[0m"
+				./email.sh
+				;;
+		
+		[5])
+				echo -e "\e[1;35m Closing Program... \e[0m"
+				echo -e "\e[1;35m To Run again type - ./Biodiversity_Log.sh + Enter... \e[0m"
+				exit 1	
+				;;
+		
+		*) echo -e "\e[1;31m Invalid input,please Choose again \e[0m"
+				
+				./menu
+				;;
+	
+esac
+
